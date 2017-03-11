@@ -7,4 +7,4 @@ This repository has several branches. Please checkout the appropriate branch for
 3) <strong>navigation</strong> - enable autonomous navigation
 
 For more information on running the code:  <br>
-http://www.moorerobots.com/2016/09/27/tutorial-getting-started-with-ros-simulations/
+http://moorerobots.com/blog/post/6
