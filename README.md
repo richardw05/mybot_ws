@@ -180,4 +180,4 @@ to
 
 6. In rviz, send a few `2D Navigation Goals` (click on `2D Nav Goal and click/drag to set position/orientation) and watch the robot autonomously navigate to the goal.
 
-Close all terminals, you are done with turtlebot3.
+Close all terminals, you are done with mybot navigation.
