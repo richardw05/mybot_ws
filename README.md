@@ -34,7 +34,7 @@ export TURTLEBOT3_MODEL="waffle"
 roslaunch mybot_gazebo turtlebot3_world.launch gui:=false
 ```
 
-4. In Terminal 2, start map building (also starts rviz)
+3. In Terminal 2, start map building (also starts rviz)
 ```
 export TURTLEBOT3_MODEL="waffle"
 roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
@@ -46,10 +46,10 @@ export TURTLEBOT3_MODEL=waffle
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
 
-4. drive around till you have a reasonable map
+5. drive around till you have a reasonable map
 
 ### Saving the map
-5. In Terminal 4, save the map to some file path
+1. In Terminal 4, save the map to some file path
 ```
 rosrun map_server map_saver -f /tmp/test_map
 ```
@@ -60,29 +60,29 @@ Now, we'll use the created map to localize while moving around.  Once
 loaded, we'll use rviz to set navigation waypoints and the robot should move
 autonomously.
 
-5. Install local planner (if needed)
+1. Install local planner (if needed)
 ```
 sudo apt install ros-melodic-dwa-local-planner
 ```
 
-6. In Terminal 1, launch the Gazebo world
+2. In Terminal 1, launch the Gazebo world
 ```
 roslaunch mybot_gazebo turtlebot3_world.launch
 ```
 
-7. In Terminal 2, start map building (will start rviz too)
+3. In Terminal 2, start map building (will start rviz too)
 ```
 roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/tmp/test_map.yaml
 ```
 
-8. In rviz, estimate initial pose - click `2D Pose Estimate` and click the approximate location of the robot on the map, and drag to indicate the direction.
+4. In rviz, estimate initial pose - click `2D Pose Estimate` and click the approximate location of the robot on the map, and drag to indicate the direction.
 
-9. In Terminal 3, start teleop and move the robot around.  The estimated positions should converge on the true position pretty quickly.
+5. In Terminal 3, start teleop and move the robot around.  The estimated positions should converge on the true position pretty quickly.
 ```
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
 
-10. In rviz, send a few `2D Navigation Goals` (click on `2D Nav Goal and click/drag to set position/orientation) and watch the robot autonomously navigate to the goal.
+6. In rviz, send a few `2D Navigation Goals` (click on `2D Nav Goal and click/drag to set position/orientation) and watch the robot autonomously navigate to the goal.
 
 Close all terminals, you are done with the turtlebot3 simulation.
 
@@ -96,7 +96,9 @@ Run the following commands.  Use teleop to move the robot around and create an a
     * `roscd mybot_description/launch`
     * `cp turtlebot3_world.launch mybot_tb3_world.launch`
     * change line 17 from:
+```
          <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /> 
+```
 to
 ```
 <param name="robot_description" command="$(find xacro)/xacro --inorder $(find mybot_description)/urdf/mybot.xacro" /> 
@@ -123,27 +125,27 @@ to
   <node pkg="tf" type="static_transform_publisher" name="base" args="0 0 0 0 0 0 chassis base_footprint 100" />
 ```
 
-4. In `mybot_description/urdf/mybot.gazebo` change the scan topic in line 90 from:
+3. In `mybot_description/urdf/mybot.gazebo` change the scan topic in line 90 from:
    ` /mybot/laser/scan` to `/scan`
  to match what turtlebot_slam expects.
 
-2. In Terminal 1, launch the gazebo world
+4. In Terminal 1, launch the gazebo world
 `roslaunch mybot_gazebo mybot_tb3_world.launch`
 
-3. In Terminal 2, start map building (also starts rviz)
+5. In Terminal 2, start map building (also starts rviz)
 `roslaunch mybot_navigation mybot_slam.launch slam_methods:=gmapping`
 
-4. In Terminal 3, start teleop
+6. In Terminal 3, start teleop
 `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
 
 ### Saving the map
-5. In Terminal 4, save the map to some file path
+1. In Terminal 4, save the map to some file path
 `rosrun map_server map_saver -f /tmp/test_map`
 
 ### Loading the map
 Close all previous terminals and run the following commands below.  Once loaded, use rviz to set navigation waypoints and the robot should move autonomously.
 
-5. Copy and modify `turtlebot3_navigation.launch`
+1. Copy and modify `turtlebot3_navigation.launch`
 
     * cp `rospack find turtlebot3_navigation`/launch/turtlebot3_navigation.launch `rospack find mybot_navigation`/launch/turtlebot3_navigation.launch
     * change line 8-11 from:
@@ -165,17 +167,17 @@ to
   <node pkg="tf" type="static_transform_publisher" name="base" args="0 0 0 0 0 0 chassis base_footprint 100" />
 ```
 
-6. In Terminal 1, launch the Gazebo world
+2. In Terminal 1, launch the Gazebo world
 `roslaunch mybot_gazebo mybot_tb3_world.launch`
 
-7. In Terminal 2, start map building (will start rviz too)
+3. In Terminal 2, start navigating with the map (will start rviz too)
 `roslaunch mybot_navigation mybot_navigation.launch map_file:=/tmp/test_map.yaml`
 
-8. In rviz, estimate initial pose - click `2D Pose Estimate` and click the approximate location of the robot on the map, and drag to indicate the direction.
+4. In rviz, estimate initial pose - click `2D Pose Estimate` and click the approximate location of the robot on the map, and drag to indicate the direction.
 
-9. In Terminal 3, start teleop and move the robot around.  The estimated positions should converge on the true position pretty quickly.
+5. In Terminal 3, start teleop and move the robot around.  The estimated positions should converge on the true position pretty quickly.
 `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
 
-10. In rviz, send a few `2D Navigation Goals` (click on `2D Nav Goal and click/drag to set position/orientation) and watch the robot autonomously navigate to the goal.
+6. In rviz, send a few `2D Navigation Goals` (click on `2D Nav Goal and click/drag to set position/orientation) and watch the robot autonomously navigate to the goal.
 
 Close all terminals, you are done with turtlebot3.
