@@ -18,9 +18,9 @@ sudo apt install ros-melodic-slam-gmapping ros-melodic-gmapping ros-melodic-open
 I had to change the turtlebot3 gazebo sim to run with no gui (slow computer).  If you don't need to do this, you can specify `gui:=true` or not change the `turtlebot3_world.launch` file.
 
 1. Copy the file
-```
-cp `rospack find turtlebot3_gazebo`/launch/turtlebot3_world.launch `rospack find mybot_gazebo`/launch
-```
+    ```
+        cp `rospack find turtlebot3_gazebo`/launch/turtlebot3_world.launch `rospack find mybot_gazebo`/launch
+    ```
 2. Using your [favorite text editor](http://vim.org), edit `turtlebot3_world.launch` and add
 `<arg name="gui" default="false"/>` below launch.  Now change
 `  <arg name="gui" value="true"/>`
@@ -96,8 +96,7 @@ Run the following commands.  Use teleop to move the robot around and create an a
     * `roscd mybot_description/launch`
     * `cp turtlebot3_world.launch mybot_tb3_world.launch`
     * change line 17 from:
- ``` <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /> 
-```
+         <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /> 
 to
 ```
 <param name="robot_description" command="$(find xacro)/xacro --inorder $(find mybot_description)/urdf/mybot.xacro" /> 
