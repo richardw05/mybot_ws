@@ -13,11 +13,13 @@ then with our `mybot` robot.
 
 #### Setup
 1. First, install the turtlebot3 packages:
-`sudo apt install ros-melodic-turtlebot3_/*`
-`sudo apt install ros-melodic-slam-gmapping ros-melodic-gmapping ros-melodic-openslam-gmapping`
+```
+sudo apt install ros-melodic-turtlebot3_/*
+sudo apt install ros-melodic-slam-gmapping ros-melodic-gmapping ros-melodic-openslam-gmapping
+```
 
 #### Creating the map
-2. I had to change the turtlebot3 gazebo to run with no gui (slow computer):
+2. I had to change the turtlebot3 gazebo to run with no gui (slow computer).  If you don't need to do this, you can specify `gui:=true` or not change the `turtlebot3_world.launch` file.
 ```
 cp `rospack find turtlebot3_gazebo`/launch/turtlebot3_world.launch `rospack find rover_gazebo`/launch
 ```
@@ -28,7 +30,7 @@ change
 to
 `  <arg name="gui" value="$(arg gui)"/>`
 finally,
-```bash
+```
 export TURTLEBOT3_MODEL=waffle
 roslaunch rover_gazebo turtlebot3_world.launch gui:=true/false
 ```
