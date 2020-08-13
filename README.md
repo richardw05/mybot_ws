@@ -19,7 +19,7 @@ I had to change the turtlebot3 gazebo sim to run with no gui (slow computer).  I
 
 1. Copy the file
     ```
-        cp `rospack find turtlebot3_gazebo`/launch/turtlebot3_world.launch `rospack find mybot_gazebo`/launch
+        cp `` `rospack find turtlebot3_gazebo` ``/launch/turtlebot3_world.launch `` `rospack find mybot_gazebo` ``/launch
     ```
 2. Using your [favorite text editor](http://vim.org), edit `turtlebot3_world.launch` and add
 `<arg name="gui" default="false"/>` below launch.  Now change
@@ -105,7 +105,7 @@ to
 ```
 
 2. Copy and modify `turtlebot3_slam.launch`
-    * cp ``rospack find turtlebot3_slam``/launch/turtlebot3_slam.launch ``rospack find mybot_navigation``/launch/mybot_slam.launch
+    * cp `` `rospack find turtlebot3_slam` ``/launch/turtlebot3_slam.launch `` `rospack find mybot_navigation` ``/launch/mybot_slam.launch
     * change line 8-11 from:
 ```
   <!-- TurtleBot3 -->
@@ -155,7 +155,7 @@ Close all previous terminals and run the following commands below.  Once loaded,
 
 1. Copy and modify `turtlebot3_navigation.launch`
 
-    * cp ```rospack find turtlebot3_navigation```/launch/turtlebot3_navigation.launch ``rospack find mybot_navigation``/launch/turtlebot3_navigation.launch
+    * cp `` `rospack find turtlebot3_navigation` ``/launch/turtlebot3_navigation.launch `` `rospack find mybot_navigation` ``/launch/turtlebot3_navigation.launch
     * change line 8-11 from:
 ```
   <!-- TurtleBot3 -->
