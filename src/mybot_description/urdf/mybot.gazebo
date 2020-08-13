@@ -28,6 +28,7 @@
       <wheelSeparation>0.4</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
       <torque>10</torque>
+      <WheelTorque>10</WheelTorque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
@@ -41,11 +42,15 @@
   </gazebo>
 
   <gazebo reference="left_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Bricks</material>
   </gazebo>
 
   <gazebo reference="right_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Wood</material>
+  </gazebo>
+
+  <gazebo reference="caster_visual">
+    <material>Gazebo/Wood</material>
   </gazebo>
 
 

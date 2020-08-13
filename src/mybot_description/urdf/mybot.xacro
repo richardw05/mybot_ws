@@ -6,7 +6,7 @@
   <xacro:property name="cameraMass" value="0.1"/>
 
   <xacro:include filename="$(find mybot_description)/urdf/mybot.gazebo" />
-  <xacro:include filename="$(find mybot_description)/urdf/materials.xacro" />
+  <!--  <xacro:include filename="$(find mybot_description)/urdf/materials.xacro" /> -->
   <xacro:include filename="$(find mybot_description)/urdf/macros.xacro" />
 
 
@@ -90,18 +90,21 @@
 
   <link name="left_wheel">
     <!--origin xyz="0.1 0.13 0.1" rpy="0 1.5707 1.5707"/-->
+
     <collision name="collision">
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </collision>
+
     <visual name="left_wheel_visual">
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </visual>
+
     <inertial>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
       <mass value="5"/>
