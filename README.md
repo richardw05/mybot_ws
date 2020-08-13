@@ -155,7 +155,7 @@ Close all previous terminals and run the following commands below.  Once loaded,
 
 1. Copy and modify `turtlebot3_navigation.launch`
 
-    * cp ``rospack find turtlebot3_navigation``/launch/turtlebot3_navigation.launch ``rospack find mybot_navigation``/launch/turtlebot3_navigation.launch
+    * cp `` `rospack find turtlebot3_navigation` ``/launch/turtlebot3_navigation.launch ``rospack find mybot_navigation``/launch/turtlebot3_navigation.launch
     * change line 8-11 from:
 ```
   <!-- TurtleBot3 -->
