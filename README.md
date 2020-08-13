@@ -176,15 +176,21 @@ to
 ```
 
 2. In Terminal 1, launch the Gazebo world
-`roslaunch mybot_gazebo mybot_tb3_world.launch`
+```bash
+roslaunch mybot_gazebo mybot_tb3_world.launch
+```
 
 3. In Terminal 2, start navigating with the map (will start rviz too)
-`roslaunch mybot_navigation mybot_navigation.launch map_file:=/tmp/test_map.yaml`
+```
+roslaunch mybot_navigation mybot_navigation.launch map_file:=/tmp/test_map.yaml
+```
 
 4. In rviz, estimate initial pose - click `2D Pose Estimate` and click the approximate location of the robot on the map, and drag to indicate the direction.
 
 5. In Terminal 3, start teleop and move the robot around.  The estimated positions should converge on the true position pretty quickly.
-`roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
+```
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
 
 6. In rviz, send a few `2D Navigation Goals` (click on `2D Nav Goal and click/drag to set position/orientation) and watch the robot autonomously navigate to the goal.
 
