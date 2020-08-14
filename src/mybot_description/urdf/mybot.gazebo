@@ -41,11 +41,11 @@
   </gazebo>
 
   <gazebo reference="left_wheel">
-    <material>Gazebo/Bricks</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
 
   <gazebo reference="right_wheel">
-    <material>Gazebo/Wood</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
 
   <gazebo reference="camera">
