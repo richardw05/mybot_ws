@@ -25,10 +25,9 @@
       <updateRate>10</updateRate>
       <leftJoint>left_wheel_hinge</leftJoint>
       <rightJoint>right_wheel_hinge</rightJoint>
-      <wheelSeparation>0.4</wheelSeparation>
+      <wheelSeparation>0.25</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
-      <torque>10</torque>
-      <WheelTorque>10</WheelTorque>
+      <wheelTorque>10</wheelTorque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
@@ -48,11 +47,6 @@
   <gazebo reference="right_wheel">
     <material>Gazebo/Wood</material>
   </gazebo>
-
-  <gazebo reference="caster_visual">
-    <material>Gazebo/Wood</material>
-  </gazebo>
-
 
   <gazebo reference="camera">
     <material>Gazebo/Green</material>
@@ -103,7 +97,7 @@
           </horizontal>
         </scan>
         <range>
-          <min>0.10</min>
+          <min>0.20</min>
           <max>30.0</max>
           <resolution>0.01</resolution>
         </range>

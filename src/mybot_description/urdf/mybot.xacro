@@ -23,7 +23,7 @@
       />
     </inertial>
 
-    <collision name='collision'>
+    <collision name='chassis_collision'>
       <geometry>
         <box size=".4 .2 .1"/>
       </geometry>
@@ -36,11 +36,10 @@
       </geometry>
     </visual>
 
-
-    <collision name='caster_collision'>
+    <collision name='caster_rear_collision'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.049"/>
       </geometry>
       <surface>
         <friction>
@@ -54,17 +53,17 @@
       </surface>
     </collision>
 
-    <visual name='caster_visual'>
+    <visual name='caster_rear_visual'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.049"/>
       </geometry>
     </visual>
 
     <collision name='caster_front_collision'>
       <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.049"/>
       </geometry>
       <surface>
         <friction>
@@ -81,10 +80,9 @@
     <visual name='caster_front_visual'>
       <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.049"/>
       </geometry>
     </visual>
-
   </link>
 
 
@@ -195,7 +193,7 @@
 
   <joint name="hokuyo_joint" type="fixed">
     <axis xyz="0 1 0" />
-    <origin xyz=".15 0 .1" rpy="0 0 0"/>
+    <origin xyz="0.15 0 .085" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="hokuyo"/>
   </joint>
